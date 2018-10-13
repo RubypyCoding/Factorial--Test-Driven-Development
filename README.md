@@ -229,7 +229,9 @@ The only difference is that you can only have one subject, and it’s meant to b
 
 RSpec already creates a default subject like this:
 
+```ruby 
 subject { Factorial.new }
+```
 
 This is called the “implicit subject”.
 
@@ -254,21 +256,6 @@ This behaves the same way as using let, but it enables the use of one-line expec
 ```ruby
 it { should be_empty }
 ```
-
-## How to Run Code Before All Your Tests
-
-RSpec has execution hooks you can use to run something before & after every test, or a whole group of tests.
-
-For example:
-
-```ruby
-describe Shop do
-  before(:all) { Shop.prepare_database }
-  after (:all) { Shop.cleanup_database }
-end
-```
-
-If you want to run this code for each example (example = test in RSpec) you can use :each instead of :all.
 
 ## How To Create Testing Subgroups
 
@@ -311,14 +298,6 @@ end
 
 Don’t forget to remove the x when you are done!
 
-** Running Examples By Name
-Instead of disabling tests, you can filter the tests you want to run with the -e flag.
-
-Example:
-
-> ruby person.rb -e bacon
-This filtering is based on the test name, so the above example will match any test with the word “bacon” on it.
-
 
 ## RSpec Expectations & Matchers
 
@@ -350,15 +329,15 @@ Where something is a predicate method (like empty?) that is going to be called o
 
 Other useful matchers:
 
-include (for arrays)
-start_with
-end_with
-match (for regular expression matching)
-be_between
-have_key / have_value (for hashes)
-be_instance_of
-respond_to
-have_attributes (for testing instance variables)
+- include (for arrays)
+- start_with
+- end_with
+- match (for regular expression matching)
+- be_between
+- have_key / have_value (for hashes)
+- be_instance_of
+- respond_to
+- have_attributes (for testing instance variables)
 
 A matcher that needs special attention is the raise_error matcher.
 
@@ -375,31 +354,6 @@ The change matcher also works like this:
 ```ruby
 expect{ stock.increment }.to change(stock, :value).by(100)
 ``` 
-
-RSpec Formatters
-The default RSpec output is in the “progress” format.
-
-With this format you see dots (.) representing 1 passing test each, an F for a failed test (expected & actual don’t match), or an E for an error.
-
-But there are alternative formatting options you can use.
-
-Here’s a list:
-
-progress
-documentation
-json
-html
-You can enable them with the -f flag:
-
-> ruby factorial.rb -f d
-
-Person
-  eats lots of healthy food
-  writes many articles
-Finished in 0.00154 seconds (files took 0.09898 seconds to load)
-2 examples, 0 failures
-
-The documentation format uses your test descriptions to generate the output.
 
 ## How to Find Slow Tests
 
