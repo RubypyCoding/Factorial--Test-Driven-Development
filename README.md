@@ -1,8 +1,8 @@
 
 
-** Test Driven Development
+## Test Driven Development
 
-**** Getting Started With RSpec
+#### Getting Started With RSpec
 
 To understand how RSpec works let’s go over an example step-by-step.
 
@@ -83,7 +83,7 @@ Then you call the method you want to exercise to get its return value.
 
 Finally, you verify the result with an expectation (RSpec) or assertion (Minitest).
 
-**** RSpec Testing Example
+#### RSpec Testing Example
 
 Now if we want to write a factorial method, we have to find out some valid values online or by hand calculation.
 
@@ -185,7 +185,7 @@ This is what we call test-driven development (TDD).
 
 You write the tests first, then let the tests guide you on what you need to do next.
 
-**** RSpec Let Method
+#### RSpec Let Method
 
 If you want to write many tests & reuse the same objects you can define these objects with let statements.
 
@@ -221,7 +221,7 @@ let!(:user) { User.create("rspec@rubyguides.com") }
 
 The let! method is non-lazy, so the object will be created before any tests are run.
 
-**** How to Use The Subject Method
+#### How to Use The Subject Method
 
 Another version of let is subject.
 
@@ -255,7 +255,7 @@ This behaves the same way as using let, but it enables the use of one-line expec
 it { should be_empty }
 ```
 
-** How to Run Code Before All Your Tests
+## How to Run Code Before All Your Tests
 
 RSpec has execution hooks you can use to run something before & after every test, or a whole group of tests.
 
@@ -270,7 +270,7 @@ end
 
 If you want to run this code for each example (example = test in RSpec) you can use :each instead of :all.
 
-** How To Create Testing Subgroups
+## How To Create Testing Subgroups
 
 If you’re testing different scenarios in your app then it may be helpful to group related tests together.
 
@@ -295,7 +295,7 @@ describe Course do
 end
 ``` 
 
-** How to Temporarily Disable a Test
+## How to Temporarily Disable a Test
 
 It’s possible to disable a test for debugging purposes.
 
@@ -320,7 +320,7 @@ Example:
 This filtering is based on the test name, so the above example will match any test with the word “bacon” on it.
 
 
-** RSpec Expectations & Matchers
+## RSpec Expectations & Matchers
 
 You may remember this example we have been using:
 
@@ -401,7 +401,7 @@ Finished in 0.00154 seconds (files took 0.09898 seconds to load)
 
 The documentation format uses your test descriptions to generate the output.
 
-** How to Find Slow Tests
+## How to Find Slow Tests
 
 RSpec comes with a very handy option to profile your tests.
 
